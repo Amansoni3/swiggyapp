@@ -1,0 +1,26 @@
+{
+  "name": "swiggyapp",
+  "version": "1.0.0",
+  "description": "This is a learning react with building project",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amansoni3/swiggyapp.git"
+  },
+  "keywords": [
+    "react",
+    "react-dom"
+  ],
+  "author": "Aman Soni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amansoni3/swiggyapp/issues"
+  },
+  "homepage": "https://github.com/Amansoni3/swiggyapp#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
