@@ -23,7 +23,7 @@
 
 .nav-items > ul{
     display: flex;
-    padding: 0;
+    padding: 0 10px;
     list-style-type: none;
     font-size: 22px;
 }
@@ -67,5 +67,21 @@
     padding: 5px 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.shimmer-container{
+    display: flex;
+}
+
+.shimmer-card{
+    margin: 20px;
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+}
+
+.login-btn{
+    padding: 0px 20px ;
     cursor: pointer;
 }
