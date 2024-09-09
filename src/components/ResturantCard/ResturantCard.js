@@ -2,7 +2,6 @@ import React from 'react'
 import { card_img_url } from '../../utlis/utlis'
 
 const ResturantCard = ({ data }) => {
-    console.log(data ,"resdata")
 
     return (
         <div className="res-card">
