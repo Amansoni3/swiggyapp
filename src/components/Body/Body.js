@@ -12,10 +12,14 @@ const Body = () => {
     }, [])
 
     const fetchedData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9615398&lng=79.2961468&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        // akshay api
+        // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9615398&lng=79.2961468&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+
+        // Gwalior api
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.2161788&lng=78.18255239999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json()
-        setListOfResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFliterListOfResturants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFliterListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     const handleSearch = () => {
@@ -27,7 +31,7 @@ const Body = () => {
         setFliterListOfResturants(filteredData);
     };
 
-    return listOfResturants.length === 0 ? <Shimmer /> : (
+    return listOfResturants?.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className='search'>
@@ -40,7 +44,7 @@ const Body = () => {
                     const filteredList = listOfResturants?.filter(
                         (res) => parseFloat(res?.info?.avgRating) > 4
                     )
-                    setListOfResturants(filteredList)
+                    setFliterListOfResturants(filteredList)
 
                 }}
                 >
