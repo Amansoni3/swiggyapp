@@ -3,6 +3,10 @@ import ResturantCard from '../ResturantCard/ResturantCard'
 import Shimmer from '../Shimmer/Shimmer'
 
 const Body = () => {
+    
+    // Local state variables - Super powerfull variables
+    // It is used to create local state variables in your functional components.
+
     const [listOfResturants, setListOfResturants] = useState([])
     const [filterListOfResturants, setFliterListOfResturants] = useState([])
     const [searchText, setSearchText] = useState('')

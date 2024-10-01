@@ -1,8 +1,16 @@
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 import {img_url} from "../../utlis/utlis";
 
 const Header = () => {
     const [btnName , setBtnName] = useState("Login")
+
+    // if no dependancy array => useEffect will call on every render.
+    // if dependency array is empty = [] => useEffect will called on initial render(just once).
+    // if dependancy array is [btnName] => called everytime is updated.
+
+    useEffect(()=>{
+        console.log("useEffect is called")
+    },[btnName])
 
     return (
         <div className="header">
