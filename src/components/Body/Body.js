@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import ResturantCard from '../ResturantCard/ResturantCard'
 import Shimmer from '../Shimmer/Shimmer'
+import { Link } from 'react-router-dom'
 
 const Body = () => {
-    
+
     // Local state variables - Super powerfull variables
     // It is used to create local state variables in your functional components.
 
@@ -58,9 +59,11 @@ const Body = () => {
             <div className="res-container">
                 {
                     filterListOfResturants?.map((item, index) => {
-                        // console.log(item?.info , "data")
+                        // console.log(item?.info?.id, "data")
                         return (
-                            <ResturantCard key={index} data={item?.info} />
+                            <Link to={`/restaurants/${item?.info?.id}`} key={index}>
+                                <ResturantCard data={item?.info} />
+                            </Link>
                         )
                     })
                 }
