@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ResturantCard from '../ResturantCard/ResturantCard'
 import Shimmer from '../Shimmer/Shimmer'
 import { Link } from 'react-router-dom'
+import useOnlineStatus from '../../utlis/useOnlineStatus'
 
 const Body = () => {
 
@@ -35,6 +36,16 @@ const Body = () => {
         });
         setFliterListOfResturants(filteredData);
     };
+
+    const onlineStatus = useOnlineStatus()
+
+    if(onlineStatus === false) {
+        return(
+            <h1>
+                Looks like you're offline !! Please check your internet connection
+            </h1>
+        )
+    }
 
     return listOfResturants?.length === 0 ? <Shimmer /> : (
         <div className="body">
