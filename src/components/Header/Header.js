@@ -17,19 +17,19 @@ const Header = () => {
     const onlineStatus = useOnlineStatus()
 
     return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src={img_url} />
+        <div className="flex justify-between items-center px-4 py-1 sticky top-0 bg-pink-200 shadow-lg mb-2">
+            <div className="w-24">
+                <img className="rounded-[100px]" src={img_url} />
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Online Status : {onlineStatus ? "Online" : "Offline"}</li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="about">About us</Link></li>
-                    <li><Link to="contact">Contact us</Link></li>
-                    <li><Link to="grocery">Grocery</Link></li>
-                    <li>Cart</li>
-                    <button className="login-btn" onClick={()=>{btnName === "Login" ? setBtnName('Logout') : setBtnName('Login')}}>{btnName}</button>
+            <div className="">
+                <ul className='flex p-4'>
+                    <li className={onlineStatus ? `text-green-600 p-4 text-xl` : `text-red-700 p-4 text-xl`}>Online Status : {onlineStatus ? "Online" : "Offline"}</li>
+                    <li className='p-4 text-xl'><Link to="/">Home</Link></li>
+                    <li className='p-4 text-xl'><Link to="about">About us</Link></li>
+                    <li className='p-4 text-xl'><Link to="contact">Contact us</Link></li>
+                    <li className='p-4 text-xl'><Link to="grocery">Grocery</Link></li>
+                    <li className='p-4 text-xl'>Cart</li>
+                    <button className="p-4 text-xl" onClick={()=>{btnName === "Login" ? setBtnName('Logout') : setBtnName('Login')}}>{btnName}</button>
                 </ul>
             </div>
         </div>
