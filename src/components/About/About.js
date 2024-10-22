@@ -14,9 +14,9 @@ class About extends React.Component {
   render() {
     // console.log("Parent render component called")
     return (
-      <div>
-        <h1>About</h1>
-        <h2>This is our about</h2>
+      <div className='bg-pink-200 p-4'>
+        <h1 className='p-2 text-xl font-medium'>About</h1>
+        <h2 className='p-2 text-xl font-medium'>This is our about</h2>
         <UserClass />
       </div>
     )

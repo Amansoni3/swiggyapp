@@ -24,11 +24,11 @@ const Header = () => {
             <div className="">
                 <ul className='flex p-4'>
                     <li className={onlineStatus ? `text-green-600 p-4 text-xl` : `text-red-700 p-4 text-xl`}>Online Status : {onlineStatus ? "Online" : "Offline"}</li>
-                    <li className='p-4 text-xl'><Link to="/">Home</Link></li>
-                    <li className='p-4 text-xl'><Link to="about">About us</Link></li>
-                    <li className='p-4 text-xl'><Link to="contact">Contact us</Link></li>
-                    <li className='p-4 text-xl'><Link to="grocery">Grocery</Link></li>
-                    <li className='p-4 text-xl'>Cart</li>
+                    <li className='p-4 text-xl hover:text-red-500'><Link to="/">Home</Link></li>
+                    <li className='p-4 text-xl hover:text-red-500'><Link to="about">About us</Link></li>
+                    <li className='p-4 text-xl hover:text-red-500'><Link to="contact">Contact us</Link></li>
+                    <li className='p-4 text-xl hover:text-red-500'><Link to="grocery">Grocery</Link></li>
+                    <li className='p-4 text-xl hover:text-red-500'>Cart</li>
                     <button className="p-4 text-xl" onClick={()=>{btnName === "Login" ? setBtnName('Logout') : setBtnName('Login')}}>{btnName}</button>
                 </ul>
             </div>

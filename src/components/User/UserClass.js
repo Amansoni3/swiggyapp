@@ -33,13 +33,13 @@ class UserClass extends React.Component {
     render() {
         // console.log(this.props.name + " Child Component render called")
         return (
-            <div className='user-card'>
-                <p>Made using class components</p>
+            <div className=''>
+                <p className="font-medium text-xl py-2">Made using class components</p>
                 <img src={this.state.userInfo.avatar_url} alt="Profile Picture" />
-                <h1>Name: {this.state.userInfo.name}</h1>
-                <h2>Location: {this.state.userInfo.location || "Gwalior"}</h2>
-                <h3>Contact: {this.state.userInfo.email || "soni.aman9039@gmail.com"}</h3>
-                <h3>Bio: {this.state.userInfo.bio}</h3>
+                <h1 className="font-medium text-xl py-2">Name: {this.state.userInfo.name}</h1>
+                <h2 className="font-medium text-xl py-2">Location: {this.state.userInfo.location || "Gwalior"}</h2>
+                <h3 className="font-medium text-xl py-2">Contact: {this.state.userInfo.email || "soni.aman9039@gmail.com"}</h3>
+                <h3 className="font-medium text-xl py-2">Bio: {this.state.userInfo.bio}</h3>
             </div>
         )
     }
