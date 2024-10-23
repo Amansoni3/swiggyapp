@@ -14,4 +14,17 @@ const ResturantCard = ({ data }) => {
     )
 }
 
+// Higher order component 
+
+export const withVegLabel = (ResturantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className='absolute bg-purple-500 text-white p-2 m-2 rounded-lg'>Only Veg</label>
+                <ResturantCard {...props} />
+            </div>
+        )
+    }
+}
+
 export default ResturantCard
