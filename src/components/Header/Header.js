@@ -1,7 +1,8 @@
-import React , {useEffect, useState} from 'react'
+import React , {useEffect, useState , useContext} from 'react'
 import {img_url} from "../../utlis/utlis";
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../../utlis/useOnlineStatus';
+import UserContext from '../../utlis/UserContext';
 
 const Header = () => {
     const [btnName , setBtnName] = useState("Login")
@@ -16,8 +17,10 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus()
 
+    const {loggedInUser} = useContext(UserContext)
+
     return (
-        <div className="flex justify-between items-center px-4 py-1 sticky top-0 bg-pink-200 shadow-lg mb-2">
+        <div className="flex justify-between items-center px-4 py-1 sticky top-0 bg-pink-200 shadow-lg ">
             <div className="w-24">
                 <img className="rounded-[100px]" src={img_url} />
             </div>
@@ -30,6 +33,7 @@ const Header = () => {
                     <li className='p-4 text-xl hover:text-red-500'><Link to="grocery">Grocery</Link></li>
                     <li className='p-4 text-xl hover:text-red-500'>Cart</li>
                     <button className="p-4 text-xl" onClick={()=>{btnName === "Login" ? setBtnName('Logout') : setBtnName('Login')}}>{btnName}</button>
+                    <li className='p-4 text-xl hover:text-red-500'>{loggedInUser}</li>
                 </ul>
             </div>
         </div>

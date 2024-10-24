@@ -13,7 +13,7 @@ const ResCategory = ({ data , showItems , setShowIndex }) => {
     }
 
     return (
-        <div className="border border-gray-300 rounded-md my-2 w-full max-w-6xl mx-auto">
+        <div className="border border-gray-300 rounded-md my-2 w-full max-w-[1400] mx-auto">
             {/* Accordion Header */}
             <div
                 className="flex justify-between items-center font-bold p-4 cursor-pointer bg-gray-100 hover:bg-gray-200"
@@ -36,7 +36,7 @@ const ResCategory = ({ data , showItems , setShowIndex }) => {
                         {data?.card?.card?.itemCards?.map((item, index) => (
                             <div key={index} className="my-2 flex justify-between items-center">
                                 {/* Item Info */}
-                                <div>
+                                <div className='max-w-[1200px]'>
                                     <p className="font-semibold">{item?.card?.info?.name}</p>
                                     <p className="text-gray-600">{item?.card?.info?.description}</p>
                                 </div>
@@ -46,7 +46,7 @@ const ResCategory = ({ data , showItems , setShowIndex }) => {
                                     className="ml-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
                                     onClick={() => addToCart(item)}
                                 >
-                                    Add
+                                    Add +
                                 </button>
                             </div>
                         ))}
