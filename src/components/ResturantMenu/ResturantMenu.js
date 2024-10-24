@@ -2,12 +2,15 @@ import Shimmer from '../Shimmer/Shimmer'; // Assuming Shimmer is your loading co
 import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../../utlis/useRestaurantMenu';
 import ResCategory from '../ResCategory/ResCategory';
+import { useState } from 'react';
 
 const RestaurantMenu = () => {
 
   const { resId } = useParams()
 
   const menuData = useRestaurantMenu(resId)
+
+  const [showIndex, setShowIndex] = useState(null)
 
   if (!menuData) return <Shimmer />; // Show Shimmer if menuData is not available yet
 
@@ -28,14 +31,20 @@ const RestaurantMenu = () => {
 
       </div>
       <h2 className='text-2xl font-medium mt-2 bg-pink-400 px-4 py-3 gap-5 rounded-[20px] mb-4'>Menu</h2>
-      <ul className='flex gap-5  flex-wrap'>
+      <ul className='flex gap-5  flex-wrap mb-4'>
         {menuItems.map((item, index) => (
           <li key={index} className='rounded-[20px] mt-2 text-xl font-normal bg-pink-400 py-4 px-3 cursor-pointer'>{item?.card?.info?.name}</li>
         ))}
       </ul>
+      {/* Controlled component */}
       {
         categories?.map((item, index) => (
-          <ResCategory data={item} key={index} />
+          <ResCategory
+            data={item}
+            key={index}
+            showItems={index == showIndex && true}
+            setShowIndex = {()=>setShowIndex(index)}
+          />
         ))
       }
     </div>
