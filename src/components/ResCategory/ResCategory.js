@@ -1,11 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../utlis/cartSlice';
 
-const ResCategory = ({ data , showItems , setShowIndex }) => {
+const ResCategory = ({ data, showItems, setShowIndex }) => {
+    const dispatch = useDispatch()
 
     // Add to Cart function
     const addToCart = (item) => {
-        console.log("Item added to cart:", item?.card?.info?.name);
-        // Add your logic here for cart functionality
+        // Dispatch an action
+        dispatch(addItem(item))
     };
 
     const handleClick = () => {
@@ -18,7 +21,7 @@ const ResCategory = ({ data , showItems , setShowIndex }) => {
             <div
                 className="flex justify-between items-center font-bold p-4 cursor-pointer bg-gray-100 hover:bg-gray-200"
                 onClick={handleClick}
-                >
+            >
                 <span>{data?.card?.card?.title}</span>
 
                 {/* Dropdown Icon */}
